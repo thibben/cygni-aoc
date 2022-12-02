@@ -15,16 +15,11 @@ const getSolutionPart1 = () => {
 }
 
 const getSolutionPart2 = () => {
-    const points = new Map([ ["A Y", 8], ["B Z", 9], ["C X", 7], ["A X", 4], ["B Y", 5], ["C Z", 6], ["A Z", 3], ["B X", 1], ["C Y", 2] ]);
-    const translate = new Map([ ["A Y", "A X"], ["B Z", "B Z"], ["C X", "C Y"], ["A X", "A Z"], ["B Y", "B Y"], ["C Z", "C X"], ["A Z", "A Y"], ["B X", "B X"], ["C Y", "C Z"] ]);
+    const translated = new Map([ ["A Y", 4], ["B Z", 9], ["C X", 2], ["A X", 3], ["B Y", 5], ["C Z", 7], ["A Z", 8], ["B X", 1], ["C Y", 6] ]);
     const game = readInputFile();
-    const translated = [];
-    for(const x of game){
-        translated.push(translate.get(x));
-    }
     let total = 0;
-    for(const x of translated){
-        total += points.get(x);
+    for(const x of game){
+        total += translated.get(x);
     }
     return total;
 }

@@ -8,7 +8,7 @@ const getSolutionPart1 = () => {
     let hungry_elf = 0;
     let current = 0;
     const input = readInputFile();
-    for(let i = 0; i < input.length; i++){
+    for(let i = 0, len =input.length; i < len; i++){
         if(isNaN(input[i])){
             if(current > hungry_elf) hungry_elf = current;
             current = 0;
@@ -23,7 +23,7 @@ const getSolutionPart2 = () => {
     const elves = [];
     let current = 0;
     const input = readInputFile();
-    for(let i = 0; i < input.length; i++){
+    for(let i = 0, len =input.length; i < len; i++){
         if(isNaN(input[i])){
             elves.push(current);
             current = 0;
